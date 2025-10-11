@@ -12,9 +12,11 @@ Email：contact@sotier71an.top sotier71an@gmail.com
 
 期望城市：北京
 
+个人主页：[https://me.sotier71an.top](https://me.sotier71an.top)
+
 GitHub：[https://github.com/Sotier71an](https://github.com/Sotier71an)
 
-个人主页：
+LeetCode：[https://leetcode.cn/u/sotier71an/](https://leetcode.cn/u/sotier71an/)
 
 # 个人自评
 
