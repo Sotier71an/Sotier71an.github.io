@@ -1,0 +1,55 @@
+/* 全局变量、重置与基础布局（默认：浅色主题） */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #60a5fa;       /* 浅色主题主色 */
+  --primary-700: #3b82f6;   /* 浅色主题深主色 */
+  --link: #2563eb;
+  --code: #f1f5f9;
+  --card: #ffffff;
+  --border: rgba(0, 0, 0, 0.12);
+  --hover-bg: rgba(0, 0, 0, 0.04);
+}
+
+/* 深色主题变量 */
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #60a5fa;       /* 深色主题主色 */
+  --primary-700: #3b82f6;   /* 深色主题深主色 */
+  --link: #60a5fa;
+  --code: #1f2937;
+  --card: #0b1020;
+  --border: rgba(255, 255, 255, 0.12);
+  --hover-bg: rgba(255, 255, 255, 0.06);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* 可复用容器与页头 */
+.container { max-width: 880px; margin: 0 auto; padding: 32px 20px; }
+header { display: flex; align-items: center; justify-content: space-between; }
+
+/* 文本与辅助色 */
+.muted { color: var(--muted); }
+
+/* 主题切换按钮（全局可复用） */
+.theme-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+}
+.theme-btn:hover { background: var(--hover-bg); }

@@ -1,0 +1,22 @@
+/* 简历页样式（resume.html） */
+.container { max-width: 860px; padding: 32px 20px; }
+
+header { margin-bottom: 20px; }
+a.back { color: var(--link); text-decoration: none; }
+a.back:hover { text-decoration: underline; }
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.content { line-height: 1.7; color: var(--text); }
+.content h1, .content h2, .content h3 { margin: 1.2em 0 0.4em; }
+.content p { margin: 0.6em 0; color: var(--text); }
+.content a { color: var(--link); text-decoration: none; }
+.content a:hover { text-decoration: underline; }
+.content code { background: var(--code); padding: 2px 5px; border-radius: 4px; }
+.content pre { background: var(--code); padding: 12px; border-radius: 8px; overflow: auto; }
+.content ul { padding-left: 1.1em; }

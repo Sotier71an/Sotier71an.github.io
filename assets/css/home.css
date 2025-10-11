@@ -1,41 +1,47 @@
-/* 主页样式（仅首页使用） */
-:root {
-  --bg: #ffffff;
-  --text: #222;
-  --muted: #5f6b7a;
-  --border: #e5e7eb;
-  --accent: #2563eb;
+/* 首页样式（index.html） */
+.container {
+  max-width: 880px;
+  padding: 48px 24px;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 1fr auto;
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
-  margin: 0;
-  color: var(--text);
-  background: var(--bg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+header .brand { font-weight: 700; letter-spacing: 0.4px; color: var(--text); }
+
+main {
+  margin-top: 48px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px;
 }
 
-.container { max-width: 960px; margin: 0 auto; padding: 24px; }
+h1 { font-size: 32px; margin: 0 0 12px; }
+p.lead { color: var(--muted); margin: 0 0 24px; }
+.actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* 首页 Hero 与按钮 */
-.hero {
-  text-align: center;
-  padding: 64px 0;
-  /* 黑白径向渐变，从按钮中心出发（默认居中） */
-  background-image: radial-gradient(circle at var(--g-x, 50%) var(--g-y, 50%), #111827 0%, #ffffff 70%);
+/* 统一按钮配色：主色（明暗主题一致） */
+a.btn, .theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.12s ease, filter 0.15s ease;
+  background: linear-gradient(180deg, var(--primary), var(--primary-700));
+  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.25);
+  cursor: pointer;
 }
-.hero h1 { font-size: 36px; margin: 0 0 12px; }
-.hero p { color: var(--muted); margin: 0 0 20px; }
-.btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-.btn { display: inline-block; padding: 10px 16px; border-radius: 10px; border: 1px solid var(--border); text-decoration: none; color: var(--text); }
-.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.btn-outline { background: transparent; color: var(--accent); }
-.btn-github { background: #111827; border-color: #111827; color: #fff; }
 
-@media print {
-  .container { max-width: none; padding: 0; }
-  a { color: inherit; text-decoration: none; }
-}
+a.btn:hover, .theme-btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+a.btn:active, .theme-btn:active { transform: translateY(0); filter: brightness(0.98); }
+
+/* 兼容旧的 .btn.primary 写法 */
+a.btn.primary { background: linear-gradient(180deg, var(--primary), var(--primary-700)); color: #ffffff; border: none; }
+
+footer { color: var(--muted); font-size: 13px; padding: 24px 0; }

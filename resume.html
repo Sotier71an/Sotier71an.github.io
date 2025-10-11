@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>简历 · Sotier</title>
+    <meta name="description" content="Sotier 的个人简历" />
+    <link rel="stylesheet" href="assets/css/globals.css" />
+    <link rel="stylesheet" href="assets/css/resume.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div style="color: var(--muted)">Sotier · 简历</div>
+        <div>
+          <a class="back" href="./">← 返回首页</a>
+          <button id="theme-toggle" class="theme-btn" type="button">深色</button>
+        </div>
+      </header>
+      <div class="card">
+        <div id="content" class="content">正在加载简历…</div>
+      </div>
+    </div>
+
+    <!-- 使用 CDN 加载 Markdown 解析器 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      async function loadResume() {
+        try {
+          const res = await fetch('profile/resume.md', { cache: 'no-store' });
+          if (!res.ok) throw new Error('无法获取简历文件');
+          const md = await res.text();
+          const html = marked.parse(md, { mangle: false, headerIds: false });
+          document.getElementById('content').innerHTML = html;
+        } catch (err) {
+          document.getElementById('content').innerHTML = `
+            <p>抱歉，加载简历失败：${err.message}</p>
+            <p>你也可以直接查看原始文件：
+              <a href="profile/resume.md" target="_blank" rel="noopener">profile/resume.md</a>
+            </p>`;
+        }
+      }
+      loadResume();
+    </script>
+    <script>
+      // 主题切换
+      const storageKey = 'theme';
+      const root = document.documentElement;
+      const btn = document.getElementById('theme-toggle');
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          root.setAttribute('data-theme', 'dark');
+        } else {
+          root.removeAttribute('data-theme');
+        }
+        localStorage.setItem(storageKey, theme);
+        btn.textContent = theme === 'dark' ? '浅色' : '深色';
+      }
+      const saved = localStorage.getItem(storageKey) || 'light';
+      applyTheme(saved);
+      btn.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+      });
+    </script>
+  </body>
+</html>

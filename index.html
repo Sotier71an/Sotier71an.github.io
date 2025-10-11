@@ -1,15 +1,57 @@
----
-layout: default
-title: 个人主页
-styles:
-  - /assets/css/home.css
----
-<section class="hero">
-  <h1>欢迎来到陈晓天的个人主页</h1>
-  <p>选择一个入口开始浏览</p>
-  <div class="btns">
-    <a class="btn btn-primary" href="/profile/resume/">查看简历</a>
-    <!-- <a class="btn btn-outline" href="/profile/resume.md" target="_blank" rel="noopener">查看简历 Markdown 原文</a> -->
-    <a class="btn btn-github" href="https://github.com/sotier71an" target="_blank" rel="noopener">访问 GitHub</a>
-  </div>
-</section>
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sotier个人主页</title>
+    <meta name="description" content="查看我的简历并访问我的 GitHub 主页" />
+    <link rel="stylesheet" href="assets/css/globals.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">Sotier</div>
+        <nav>
+          <button id="theme-toggle" class="theme-btn" type="button">深色</button>
+        </nav>
+      </header>
+
+      <main>
+        <p class="lead">你可以在这里查看我的简历，或访问我的 GitHub 主页。</p>
+        <div class="actions">
+          <a class="btn" href="resume.html">查看简历</a>
+          <a class="btn" href="https://github.com/Sotier71an" target="_blank" rel="noopener">访问 GitHub</a>
+        </div>
+      </main>
+
+      <footer>
+        © <span id="year"></span> Sotier · All rights reserved
+      </footer>
+    </div>
+    <script>
+      // 年份
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // 主题切换
+      const storageKey = 'theme';
+      const root = document.documentElement;
+      const btn = document.getElementById('theme-toggle');
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          root.setAttribute('data-theme', 'dark');
+        } else {
+          root.removeAttribute('data-theme');
+        }
+        localStorage.setItem(storageKey, theme);
+        btn.textContent = theme === 'dark' ? '浅色' : '深色';
+      }
+      const saved = localStorage.getItem(storageKey) || 'light';
+      applyTheme(saved);
+      btn.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+      });
+    </script>
+  </body>
+</html>
