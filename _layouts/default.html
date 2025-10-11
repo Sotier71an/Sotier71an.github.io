@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  {% if page.styles %}
+    {% for s in page.styles %}
+    <link rel="stylesheet" href="{{ s }}">
+    {% endfor %}
+  {% endif %}
+</head>
+<body>
+  <main class="container">
+    {{ content }}
+  </main>
+</body>
+</html>
