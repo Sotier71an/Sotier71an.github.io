@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>我的简历</title>
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>我的简历</h1>
+      <nav class="site-nav">
+        <a href="/index.html">返回首页</a>
+        <a href="/profile/profile.html">返回个人简介</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card section markdown" id="resume">加载中...</section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">最新更新以仓库中的 Markdown 为准</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch('/docs/resume.md')
+      .then(res => {
+        if (!res.ok) throw new Error('无法加载简历 Markdown 文件');
+        return res.text();
+      })
+      .then(md => {
+        const html = marked.parse(md, { breaks: true });
+        document.getElementById('resume').innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById('resume').textContent = '加载简历失败：' + err.message;
+      });
+  </script>
+</body>
+</html>
