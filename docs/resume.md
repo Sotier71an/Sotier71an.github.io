@@ -2,13 +2,11 @@
 
 # 陈晓天
 
-**(男, 20 岁)** | **18730381208** | **contact@sotier71an.top** & **Sotier71an@gmail.com** | **期望城市: 北京**
+**(男, 20 岁)** | **18730381208** | **contact@sotier71an.top** & **Sotier71an@gmail.com**
 
-**求职意向: 算法工程师 (实习) / 后端开发工程师 (实习)**
+**期望城市: 北京**｜**求职意向: 算法工程师 (实习) / 后端开发工程师 (实习)**
 
 **个人主页:** [me.sotier71an.top](https://me.sotier71an.top) | **GitHub:** [Sotier71an](https://github.com/Sotier71an) | **LeetCode:** [Sotier7ian](https://leetcode.cn/u/sotier7ian)
-
-##
 
 # 个人自评
 
@@ -50,13 +48,42 @@
 
 # 核心技能
 
-- 编程语言: Python (熟练), C++ (熟练), Go, Java, SQL
-- AI & 数据: PyTorch, Elasticsearch (DSL), 机器学习 (CNN, RNN, GNN), 语音转换 (Seed-VC), Pandas
-- 后端 & 框架: Flask (MVC, Blueprint), SQLAlchemy, Pybind11, RESTful API
-- 数据库: MySQL, Redis, MongoDB
-- 工具 & 协作: Git, Docker, ApiPost (文档与测试), DataGrip, Linux
-- 综合能力: 具备从算法模型到工程化 API 部署的全链路经验；拥有 C++/Pybind 优化后端性能的实战经历。
-- 语言 & 证书: CET-4: 645 (听力满分), CET-6: 525; 全国大学生英语竞赛三等奖; 中共预备党员
+- 编程语言: Python (熟练), C++ (熟练), Java, Go
+
+- 算法与 AI:
+
+  - 机器学习: 熟练掌握 CNN、RNN、GNN 等模型，具备 PyTorch 框架开发经验。
+
+  - 科研能力: EI 会议二作 (GNN)；可以复现前沿论文（如 Seed-VC, LaTeX 识别）。
+
+  - 硕士研究方向为 ML、NLP、LLM。
+
+- 后端工程:
+
+  - 框架: Flask，深入理解 MVC/Blueprint 分层架构 (controller/service/model)。
+
+  - 性能优化: 具备识别性能瓶颈并使用 C++/pybind11 结合 Python 优化后端性能的实战经验。
+
+  - API: RESTful API 设计、开发与测试；熟练使用 ApiPost 编写接口文档。
+
+- 数据与检索:
+
+  - 数据库: MySQL (SQLAlchemy), Redis, MongoDB, DataGrip。
+
+  - 搜索引擎: Elasticsearch (熟练)，包括索引设计、多维聚合以及 DSL 查询。
+
+- 工具与素养:
+
+  - 版本控制: Git (熟练掌握工作流与代码规范)。
+
+  - 文档协作: Obsidian、Typora，具备良好的技术文档撰写习惯。
+
+- 综合素质:
+
+  - 英语: CET-4 645 (听力满分), CET-6 525，具备优秀的技术文档阅读能力。
+
+  - 团队协作: 曾任团支书（校优干）、社会实践队长（新京报报道），具备项目管理与团队协作能力。
+  - 目前为中共预备党员
 
 # 实习经历
 
